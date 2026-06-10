@@ -48,7 +48,7 @@ p.innerHTML = "Contacting with Aliens"
 p.classList.add("dots")
    await promiseFour()
 //p.innerHTML  = `Congratulations! aap ${input.value-2025} saal baad ${input.value} me pahuch jayenge`
-p.innerHTML  = `Congratulations 🥳, you will arrive in ${input.value} in ${input.value-2025} years.`
+p.innerHTML  = `Congratulations 🥳, you will arrive in ${input.value} in ${input.value-2026} years.`
 p.classList.remove("dots")
 
 }
