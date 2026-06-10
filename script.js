@@ -37,6 +37,7 @@ setTimeout(() => {
 }
 
 async function getData() {
+   submit.disabled = true
    p.innerHTML  = "Your data received successfully"
     await promiseOne()
  p.innerHTML =  `You want to go in ${input.value}`
@@ -50,7 +51,7 @@ p.classList.add("dots")
 //p.innerHTML  = `Congratulations! aap ${input.value-2025} saal baad ${input.value} me pahuch jayenge`
 p.innerHTML  = `Congratulations 🥳, you will arrive in ${input.value} in ${input.value-2026} years.`
 p.classList.remove("dots")
-
+ submit.disabled = false
 }
 
 submit.addEventListener("click",()=>{
