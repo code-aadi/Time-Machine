@@ -1,0 +1,174 @@
+/* Universal Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #1b1145 0%, #08020f 100%);
+    color: #ffffff;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+/* Heading Style (Sci-Fi / Neon Glow Effect) */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #00f3ff;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.6),
+                 0 0 20px rgba(0, 243, 255, 0.4),
+                 0 0 30px rgba(0, 243, 255, 0.2);
+}
+
+/* Main Container Card */
+.main {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 40px 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 60px rgba(0, 243, 255, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Paragraph Instructions */
+.para {
+    font-size: 1.05rem;
+    color: #ccd6f6;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+/* Input Field Styling */
+#inp {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1.1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    color: #ffffff;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#inp:focus {
+    border-color: #00f3ff;
+    background: rgba(0, 243, 255, 0.05);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.25);
+}
+
+#inp::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Hide Spin Buttons in Input (Chrome, Safari, Edge, Opera) */
+#inp::-webkit-outer-spin-button,
+#inp::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Hide Spin Buttons for Firefox */
+#inp[type=number] {
+    appearance: textfield;
+}
+
+/* Futuristic Submit Button */
+.submit {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #08020f;
+    background: linear-gradient(45deg, #00f3ff, #9d00ff);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(157, 0, 255, 0.4);
+}
+
+.submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 243, 255, 0.6);
+    filter: brightness(1.1);
+}
+
+.submit:active {
+    transform: translateY(1px);
+}
+
+/* Dynamic Messages Box */
+.messages {
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    min-height: 24px; /* Space reserved so layout doesn't jump */
+    color: #ff007f;
+    text-shadow: 0 0 8px rgba(255, 0, 127, 0.3);
+    word-break: break-word;
+}
+ .dots::after{
+            content: '...';
+            animation: dots 500ms infinite;
+        }
+   
+
+   @keyframes dots {
+    0%{content: "";}
+    20%{content: ".";}
+    40%{content: "..";}
+    60%{content: "...";}
+   }
+
+/* Responsive Media Queries */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .main {
+        padding: 30px 20px;
+    }
+
+    .para {
+        font-size: 0.95rem;
+    }
+
+    #inp, .submit {
+        padding: 12px 16px;
+        font-size: 1rem;
+    }
+}
